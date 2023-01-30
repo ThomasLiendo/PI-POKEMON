@@ -1,0 +1,9 @@
+.CardsContainer {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  /* esto es para que cuando llegue al final de la pantalla, se vaya para abajo la informacion */
+  gap: 1m;
+}
