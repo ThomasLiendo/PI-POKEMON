@@ -6,22 +6,23 @@ const {
 
   findByIdApi,
 } = require("../pokemon.controller");
+const isUUID = require("is-uuid");
 
 const createPokemonHandler = async (req, res) => {
-  const { name, type, hp, attack, defense, speed, height, weight, image } =
+  const { name, type, health, attack, defense, speed, height, weight, img } =
     req.body;
 
   try {
     const newPokemon = await createPokemons(
       name,
       type,
-      hp,
+      health,
       attack,
       defense,
       speed,
       height,
       weight,
-      image
+      img
     );
     // res.status(200).json(newPokemon);
     res.status(200).send(`Pokemon added to the pokedex`);
@@ -46,8 +47,11 @@ const getPokemonHandler = async (req, res) => {
 const getPokemonByIdHandler = async (req, res) => {
   const { id } = req.params;
   try {
-    const pokemon = id ? await findByIdApi(id) : await findById(id);
-    res.status(200).json(pokemon);
+    const pokemon = isUUID.v4(id) ? await findById(id) : await findByIdApi(id);
+    //isUUID.v4 sirve para hacer la comprobacion de este tipo de dato con id
+    isUUID.v4(id)
+      ? res.status(200).json([pokemon])
+      : res.status(200).json(pokemon);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

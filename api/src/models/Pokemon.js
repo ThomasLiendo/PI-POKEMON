@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    hp: {
+    health: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -39,8 +39,8 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    image: {
-      type: DataTypes.TEXT, //puse .text para que cuando se ponga una imagen me permita mas caracteres para poner un link largo
+    img: {
+      type: DataTypes.STRING, //puse .text para que cuando se ponga una imagen me permita mas caracteres para poner un link largo
       allowNull: true,
     },
     createInDb: {

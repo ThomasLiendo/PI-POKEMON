@@ -11,6 +11,7 @@ import {
 import styles from "./Home.module.css";
 import CardsContainer from "../../components/CardsContainer/CardsContainer";
 import Filter from "../Filter/Filter";
+import background from "../../assets/background.jpg";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -63,11 +64,13 @@ export default function Home() {
         <option value="none">By state</option>
         <option value="true">Created</option>
       </select>
+
       <Link to="/pokemon">
         <button className={styles.button}>Create Pokemon</button>
       </Link>
+
       <SearchBar setCurrentPage={setCurrentPage} />
-      <CardsContainer />;
+      <CardsContainer />
     </div>
   );
 }

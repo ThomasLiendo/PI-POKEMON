@@ -57,23 +57,28 @@ const findByName = async (name) => {
 const createPokemons = async (
   name,
   type,
-  hp,
+  health,
   attack,
   defense,
   speed,
   height,
-  weight
+  weight,
+  img
 ) => {
   const pokemonCreate = await Pokemon.create({
     name,
-    type,
-    hp,
+    health,
     attack,
     defense,
     speed,
     height,
     weight,
+    img,
   });
+
+  const typeDb = await Type.findAll({ where: { name: type } });
+
+  pokemonCreate.addTypes(typeDb);
 
   return pokemonCreate;
 };
@@ -118,10 +123,6 @@ const getTypesApi = async () => {
 
 // ACA SE VAN HACER LAS PETICIONES DEL FRONT AL BACK MEDIANTE UNA REQUEST Y UNA POSTERIOR RESPONSE
 // ESTA COMUNICACION SE VA A REALIZAR MEDIANTE UN DETERMINADO MARCO/REGLA, MEDIANTE EL PROTOCOLO HTTP QUE ESTABLECE LAS REGLAS DICHAS MEDIANTE METODOS(GET, POST, PUT, DELETE)
-//get: pedir info
-//post: crear
-//put: modificar
-//delete: eliminar
 
 module.exports = {
   getTypesApi,
@@ -135,3 +136,51 @@ module.exports = {
 };
 
 // LOS CONTROLADORES SON LOS QUE INTERACTUAN CON EL MODELO
+
+//API
+// Significa interfaz (es una interfaz) de programación de aplicaciones. Las API permiten que sus productos y servicios se comuniquen con otros, sin necesidad de saber como están implementados. Esto simplifica el desarrollo de las aplicaciones y permite ahorrar tiempo y dinero. Ej: Usar Maps en una App como easy taxi, Usar paypal o mercado pago en una App Tienda, etc
+// Hay muchos tipos:
+// Clasificación:
+// Locales: se ejecutan dentro del mismo entorno (vibracion del telefono)
+// Remotas: Consumens datos de una app que está en otro lugar
+// API REST (Representational State Transfer): Es una arquitectura, implica que pueden guardarse los datos en cache, que el estado no se envia en las peticiones y puedes definir que datos permites que otra aplicacion acceda, revise o manipule (permisos)
+
+// Dentro de las API REST cada recurso que se consulta tienen un identificador unico llamado URI, pero dentro de la APPi el servidor puede contestar con códigos:
+// Codigos 200 (respuesta exitosa)
+// Codigos 300 (Redireccion)
+// Codigos 400 (Peticion inválida)
+// Codigos 500 (Errores en el servidor)
+
+// Métodos HTTP:
+// Get (solicitar nueva informacion)
+// Post (Evnviar nueva informacion)
+// Put (actualizar informacion que ya existe)
+// Delete (borrar un recurso)
+
+// Formatos:
+// Json {}
+// XML <>
+// Texto plano
+
+// Buenas prácticas:
+// HATEOAS
+// Seguridad
+// Testear (ligado a la documentación)
+// Documentar
+
+// XML (Extensible Markup Lenguaje)
+// Formato tradicional para enviar datos en api
+
+// Json (JavaScript Objet Notation)
+// Mas usado hoy en dia para transferir informacion
+
+// Token: Las APIs pueden ser publicas (acceso libre) o privadas (requiere autenticación para lo cual solicitará un Token (jwt))
+
+// Interfaz
+// Capa de abstracción para que dos sistemas se comuniquen. Ej: volante y auto, o formulario de login
+
+// Arquitectura de software:
+// Es la forma en que está diseñado un sistema, cómo están organizados sus componentes, como se comunican entre ellos, qué funciones cumplen
+
+// Servicio Web:
+// Es un sistema que permite comunicación entre equipos que están en una misma red, siguiendo determinados estandares (http,etc)

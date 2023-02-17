@@ -8,8 +8,6 @@ import styles from "./Detail.module.css";
 import image from "../../assets/image.gif";
 
 export default function Detail() {
-  //   const pokemonDetail = useSelector((state) => state?.pokemonDetail);
-  //   console.log(pokemonDetail);
   const { id } = useParams();
   const [pokemonDetail, setPokemon] = useState({});
 
@@ -30,16 +28,20 @@ export default function Detail() {
           </button>
         </Link>
       </div>
-      <div className={styles.cardDetail}>
-        <div>
+      <div className={styles.container}>
+        <div className={styles.Card}>
           {pokemonDetail[0] ? (
             <div>
               <p className={styles.id}>id:{pokemonDetail[0].id}</p>
               <p className={styles.name}>Name:{pokemonDetail[0].name}</p>
-              <img src={pokemonDetail[0].img} alt="IMAGE NOT FOUND" />
+              <img
+                className={styles.img}
+                src={pokemonDetail[0].img}
+                alt="IMAGE NOT FOUND"
+              />
 
               <h3 className={styles.type}>types:{pokemonDetail[0].type}</h3>
-              <h3 className={styles.hp}>hp:{pokemonDetail[0].health}</h3>
+              <h3 className={styles.hp}>health:{pokemonDetail[0].health}</h3>
               <h3 className={styles.attack}>
                 attack:{pokemonDetail[0].attack}
               </h3>

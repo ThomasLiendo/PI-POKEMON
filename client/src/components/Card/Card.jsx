@@ -11,7 +11,7 @@ const Card = (props) => {
   };
   return (
     <div className={styles.container}>
-      <div className={styles.Card.face}>
+      <div className={styles.Card}>
         <div className={styles.front}>
           <Link to={`/detail/${props.id}`}>
             <h3 onClick={handleClick} className={styles.name}>
@@ -20,8 +20,7 @@ const Card = (props) => {
             <img src={props.img} alt="IMAGE NOT FOUND" className={styles.img} />
           </Link>
         </div>
-        <div className={styles.back}>
-          <h3>{props.name}</h3>
+        <div className={styles.details}>
           <p>id:{props.id}</p>
           <p>type:{props.type}</p>
           <p>health:{props.health}</p>

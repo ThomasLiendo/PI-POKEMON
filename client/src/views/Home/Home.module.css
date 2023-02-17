@@ -1,0 +1,19 @@
+.body {
+  background: url("../../assets/background2.jpg");
+}
+
+.button {
+  padding: 0.1em 0.25em;
+  width: 13em;
+  height: 4.2em;
+  background-color: #000000;
+  border: 0.08em solid rgb(0, 0, 0);
+  border-radius: 0.3em;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.button:hover {
+  transition: all 0.1s;
+  transform: translate(0, 0.4em);
+}
