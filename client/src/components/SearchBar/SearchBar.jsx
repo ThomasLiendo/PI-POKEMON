@@ -35,13 +35,14 @@ export default function SearchBar() {
           <input
             type="text"
             name="input-text"
-            required
+            required="required"
             spellCheck="false"
             onChange={(e) => {
               handleInputChange(e);
             }}
           />
-          <h4 className={styles.placeholder}>Find your favorite Pokemon</h4>
+          <span>Find your Pokemon</span>
+          <i></i>
         </div>
       </form>
     </div>

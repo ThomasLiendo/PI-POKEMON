@@ -147,7 +147,6 @@ export default function Form() {
 
   return (
     <div>
-      <SearchBar />
       <div className={styles.contenedor}>
         <form
           className={styles.contenedorForm}

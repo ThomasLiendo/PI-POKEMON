@@ -5,3 +5,9 @@
   min-height: 80vh;
   flex-wrap: wrap;
 }
+
+.paginatedBody {
+  color: black;
+  display: flex;
+  align-items: center;
+}

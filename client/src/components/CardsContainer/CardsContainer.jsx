@@ -48,6 +48,7 @@ const CardsContainer = () => {
         );
       })}
       <Paginated
+        className={styles.paginatedBody}
         pokemonPerPage={pokemonPerPage}
         pokemons={pokemons?.length}
         currentPage={currentPage}

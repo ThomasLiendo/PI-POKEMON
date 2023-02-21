@@ -1,3 +1,12 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(255, 255, 253, 0.479);
+  border-radius: 45px;
+}
 .Card {
   display: flex;
   justify-content: space-around;
@@ -9,7 +18,7 @@
   height: auto;
 }
 
-.Card:hover {
+.container:hover {
   transform: scale(1.05);
   transition: all 0.5s ease 0.2s;
 }
@@ -24,16 +33,6 @@
 .name {
   color: rgb(0, 0, 0);
   text-transform: uppercase;
-}
-
-.container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(255, 255, 253, 0.479);
-  border-radius: 45px;
 }
 
 .details {
