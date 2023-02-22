@@ -33,14 +33,14 @@ export default function Detail() {
           {pokemonDetail[0] ? (
             <div>
               <p className={styles.id}>id:{pokemonDetail[0].id}</p>
-              <p className={styles.name}>Name:{pokemonDetail[0].name}</p>
+              <p className={styles.name}>{pokemonDetail[0].name}</p>
               <img
                 className={styles.img}
                 src={pokemonDetail[0].img}
                 alt="IMAGE NOT FOUND"
               />
 
-              <h3 className={styles.type}>types:{pokemonDetail[0].type}</h3>
+              <h3 className={styles.type}>type:{pokemonDetail[0].type}</h3>
               <h3 className={styles.hp}>health:{pokemonDetail[0].health}</h3>
               <h3 className={styles.attack}>
                 attack:{pokemonDetail[0].attack}

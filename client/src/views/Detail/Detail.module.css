@@ -1,6 +1,21 @@
 .bodyDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: url("../../assets/detail.jpg");
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: cover;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+  background-color: rgba(246, 246, 246, 0);
 }
 .Card {
   display: flex;
@@ -18,22 +33,21 @@
 .img {
   width: 150px;
   height: 150spx;
-  border-radius: 10px;
   position: relative;
   top: 0px;
 }
 
 .name {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
 }
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 160px;
   background: rgba(255, 253, 253, 0);
   width: auto;
   height: auto;
@@ -42,9 +56,9 @@
   padding: 0.1em 0.25em;
   width: 13em;
   height: 4.2em;
-  background-color: #1c1515bf;
+  background-color: #1c1515;
   border: 0.08em solid rgb(13, 13, 13);
-  border-radius: 0.3em;
+  border-radius: 20px;
   font-size: 12px;
   color: #fff;
 }
@@ -52,15 +66,4 @@
 .button:hover {
   transition: all 0.5s;
   transform: translate(0, 0.4em);
-  box-shadow: 0 0 0 0 #fff;
-}
-
-.nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 86px;
-  background-color: rgba(246, 246, 246, 0);
 }
