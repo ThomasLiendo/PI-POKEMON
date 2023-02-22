@@ -5,11 +5,12 @@ import styles from "./LandingPage.module.css";
 
 export default function LandingPage() {
   return (
-    <div className={styles.Landing}>
-      <img src={pokeImage} alt="image" className={styles.Image} />
-      <Link to="/home">
-        <button className={styles.button}>Login</button>
-      </Link>
+    <div className={styles.body}>
+      <div className={styles.LandingPage}>
+        <Link to="/home">
+          <button className={styles.button}>Login</button>
+        </Link>
+      </div>
     </div>
   );
 }

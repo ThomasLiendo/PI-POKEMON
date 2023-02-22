@@ -1,32 +1,38 @@
-.Landing {
+.body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  background: url("../../assets/background.jpg");
+  background-repeat: no-repeat;
   height: 100vh;
-  width: 100%;
-  text-align: center;
-  position: relative;
-}
 
-.Image {
-  height: 150%;
-  cursor: pointer;
+  background-size: cover;
 }
-
+.LandingPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 .button {
-  padding: 0.1em 0.25em;
-  width: 13em;
-  height: 4.2em;
-  background-color: #1c1515bf;
-  border: 0.08em solid rgb(13, 13, 13);
-  border-radius: 0.3em;
-  font-size: 12px;
-  color: #fff;
+  width: 170px;
+  height: 60px;
+  font-size: 18px;
+  background: #e90404;
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s;
 }
 
 .button:hover {
   transition: all 0.5s;
   transform: translate(0, 0.4em);
-  box-shadow: 0 0 0 0 #fff;
+  box-shadow: inset 0 0 0 8px #c77121, inset 0 0 0 12px #149b36,
+    inset 0 0 0 16px #118ab2;
+  background: #fbffff;
+  color: #ff0000;
 }
